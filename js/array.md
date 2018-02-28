@@ -13,3 +13,36 @@
     > 修改参数: 先删除后添加 startindex value(删除个数) value(添加个数)
 
     > 返回值,是所有被删除的数据组成的一个新数组 
+
+### 索引值方法
+
+* indexOf()
+
+* lastIndexOf()
+
+### 迭代方法
+
+* forEach(fn)
+  
+* map(fn)
+  转换方法,返回一个大小相同的数组,每一位的值取决于函数的返回值;
+
+* filter(fn)
+  过滤方法,得到执行fn后 返回值为true 新数组元素
+
+* some(fn) 
+  只要有一个元素符合条件,则返回true
+
+* every(fn)
+  所有元素都返回true才返回true
+以上方法都接受3个参数 item idx array 后两个可选 
+
+### 归并方法
+* reduce(fn[,initValue])
+  接受一个回调函数和一个初始值
+  回调函数有4个参数
+  per 上一次返回的值,如果有initValue  那么第一次返回的值就是initValue,如果没有那么第一次返回第一个元素的值
+  current 当前的值
+  index 索引值
+  array 当前数组
+
