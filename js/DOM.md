@@ -68,4 +68,6 @@
 
 ## 获取计算后的css属性
 - getComputedStyle(ele[,pseudo]);
-- 
+- ie8 currentStyle()
+
+## table对象
