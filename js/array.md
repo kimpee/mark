@@ -1,5 +1,11 @@
 # 数组
 
+- pop() 删除数组末尾的元素并且返回
+- push() 往数组的末尾添加
+- shift() 在数组的头部开始删除
+- unshift() 在数组的头部开始添加
+
+
 - splice(start,deleteAcount,item1)方法 可以添加删除,修改多个元素
  
     > 删除参数: 只使用start参数,会删除数组的头尾元素;
@@ -46,3 +52,5 @@
   index 索引值
   array 当前数组
 
+### 复制数组
+- slice
