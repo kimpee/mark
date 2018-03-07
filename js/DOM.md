@@ -44,8 +44,8 @@
 - 利用节点关系获取其他节点
   - 获取父级节点
     - ele.parentNode 得到ele元素的父节点   parentElement
-  - 获取子节点 
-    - ele.childNodes 得到ele元素的全部子节点列表(类数组)    用children可兼容ie 
+  - 获取子节点
+    - ele.childNodes 得到ele元素的全部子节点列表(类数组)    用children可兼容ie
     - ele.firstChild 获得ele元素的第一个子节点 firstElementChild
     - ele.lastChild 获得ele元素的最后一个子节点
   - 获取兄弟节点 lastElementChild
@@ -70,4 +70,19 @@
 - getComputedStyle(ele[,pseudo]);
 - ie8 currentStyle()
 
-## table对象
+## table对象(了解)
+
+- rows 返回包含表格中所有行的一个数组
+- tBodies 返回包含表格中所有tbody的一个数组
+- insertRow(index) 在表格中插入一个新行
+- deteleRow(index) 从表格删除一行
+
+## tr对象属性&方法
+- cells 返回包含表格中所有单元格的一个数组
+- rowIndex 返回该行在表中的位置
+- sectionRowIndex 返回在 tbody thead tfoot中行的位置.
+- insertCell(index) 在一行中的指定位置插入一个空的列
+- deleteCell(index)删除行中的指定的单元格
+
+## td/th 对象属性&方法
+- cellIndex 返回单元格在表格行的单元格集中的位置.
