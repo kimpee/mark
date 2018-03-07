@@ -18,6 +18,21 @@ function verification(){
 }
 
 /*
+  @param {Element} ele  函数对象
+  @param {String} type 事件类型
+  @param {function} fun 事件处理函数
+  @param {Boolean} isCapture 捕获
+*/
+function bind(ele,type,fun,isCapture){
+  if (ele.addEventListerner) {
+    ele.addEventListerner(type,fun,isCapture);
+  }else if(ele.attachEvent){
+    ele.attachEvent('on'+type,fun);
+  }else{
+    ele['on'+type]=fun;
+  }
+}
+/*
 浏览器自动刷新可以用
 <script>
         document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
