@@ -75,14 +75,16 @@
 >  - 表单提交
 >  - 右键菜单
 >  - 文本的选择
+>  - 图片拖拽
+>  - 文本选择
 
 - 标准: event.preventDefault();
 - ie8-:event.returnValue=false;
 
 
 ## 事件监听器
-- 添加 addEventListerner(type,fun,isCapture); 捕获(反冒泡)
-- 删除 removeEventListerner(type,fun,isCapture); 传入的参数一定要一样才能删除
+- 添加 addEventListener(type,fun,isCapture); 捕获(反冒泡)
+- 删除 removeEventListener(type,fun,isCapture); 传入的参数一定要一样才能删除
 - ie8 添加 target.attachEvent('onclick',fun); 可以绑定多个函数在同一个对象上,执行顺序按照绑定的反序
 - ie8 删除 detachEvent('onclick,fun'),传入的参数fun要跟添加时一样,否则不能移除事件
 >  注意:页面事件绑定数量越多,越影响性能(速度越慢)
