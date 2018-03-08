@@ -1,3 +1,35 @@
+
+/*
+  @param cookies操作
+*/
+var Cookies={
+  get:function(name){
+
+    var cookies=document.cookie.split('; ');
+    if(cookies.length === 0){
+      return '';
+    }
+    for (var _cookie in cookies) {
+      if (_cookie[0] === name) {
+        return _cookie[1];
+      }
+    }
+  },
+  set:function(name,value,date,path){
+    var cookie=name + '=' + value;
+    if(date){
+      cookie+= ';expires='+ date;
+    }
+    if (path) {
+      cookoe+= ';path='+ path;
+    }
+    document.cookie=cookie;
+
+    return document.cookie;
+  },
+}
+
+
 /**
  * @param min 最小的值
  * @param max 最大的值
@@ -8,6 +40,7 @@ function randomRange(min,max){
     return parseInt(Math.random() * (max - min + 1) + min);
 }
 
+//验证码
 function verification(){
     var code='';
     var codeStr='0123456789abcdefghijklmnopqrstuvwyzABCDEFGHIJKLMNOPQRSTUVWYZ';
@@ -18,10 +51,11 @@ function verification(){
 }
 
 /*
+  兼容ie8的事件绑定
   @param {Element} ele  函数对象
   @param {String} type 事件类型
   @param {function} fun 事件处理函数
-  @param {Boolean} isCapture 捕获
+  @param {Boolean} isCapture 捕获(反冒泡)
 */
 function bind(ele,type,fun,isCapture){
   if (ele.addEventListerner) {
