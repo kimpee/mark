@@ -4,14 +4,14 @@
 */
 var Cookies={
   get:function(name){
-
     var cookies=document.cookie.split('; ');
     if(cookies.length === 0){
       return '';
     }
-    for (var _cookie in cookies) {
-      if (_cookie[0] === name) {
-        return _cookie[1];
+    for (var i = 0; i < cookies.length; i++) {
+      var keyvalue=cookies[i].split('=');
+      if (keyvalue[0] === name) {
+        return keyvalue[1];
       }
     }
   },
@@ -27,6 +27,21 @@ var Cookies={
 
     return document.cookie;
   },
+  remove:function(name){
+    var date=new Date();
+    date.setDate(date.getDate()-1);
+    this.set(name,null,date,null);
+  },
+  clear:function(){
+    var cookies=document.cookie.split('; ');
+    if(cookies.length === 0){
+      return '';
+    }
+    for (var i = 0; i < cookies.length; i++) {
+      var keyvalue=cookies[i].split('=');
+      this.remove(keyvalue[0]);
+    }
+  }
 }
 
 
