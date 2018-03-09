@@ -14,6 +14,7 @@ var Cookies={
         return keyvalue[1];
       }
     }
+    return '';
   },
   set:function(name,value,date,path){
     var cookie=name + '=' + value;
