@@ -46,9 +46,9 @@
     - ele.parentNode 得到ele元素的父节点   parentElement
   - 获取子节点
     - ele.childNodes 得到ele元素的全部子节点列表(类数组)    用children可兼容ie
-    - ele.firstChild 获得ele元素的第一个子节点 firstElementChild
-    - ele.lastChild 获得ele元素的最后一个子节点
-  - 获取兄弟节点 lastElementChild
+    - ele.firstChild;(包括文本节点) 获得ele元素的第一个子元素 firstElementChild
+    - ele.lastChild;(包括文本节点) 获得ele元素的最后一个子元素 lastElementChild
+  - 获取兄弟节点
     - ele.nextSibling 获得ele元素的下一个兄弟节点
     - ele.previousSibling 得到ele元素的上一个兄弟节点
 
