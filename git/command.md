@@ -10,16 +10,16 @@
 
     > git log --pretty==oneline 打印一行
 
-    > git log --pretty==short 只显示commitID 和 commit信息 
+    > git log --pretty==short 只显示commitID 和 commit信息
 
-    > git log --pretty==full 显示名字 email commitID commit内容 
+    > git log --pretty==full 显示名字 email commitID commit内容
 
     > git log --pretty==fuller 显示时间 包括authorDate和commitDate 名字 email commitID commit内容
 
-- 最有意思的是 format 
+- 最有意思的是 format
     > git log --pretty=format:"%h - %an, %ar : %s"
 
-    ### format常用选项
+### format常用选项
     - %H  --- 显示完整的commit 哈希值字串
     - %h  --- 显示简短的commit 哈希值字串
     - %T  --- 显示完整的commit 哈希值字串(树对象tree)
@@ -44,7 +44,7 @@
 
     _可以覆盖上一次commit 只添加更改 不添加提交次数_
 
-- git reset HEAD `<file>`... 
+- git reset HEAD `<file>`...
 
     _取消暂存,_
 
@@ -54,7 +54,7 @@
 
 ###　远程仓库
 
-- git remote 
+- git remote
 
     _查看远程仓库,名字_
 
@@ -62,7 +62,7 @@
 
     _查看远程仓库的详细信息_
 
-- git remote add `<shortname> <url>` 
+- git remote add `<shortname> <url>`
 
     _添加一个新的远程仓库,同时可以指定一个简写,如果你想拉取别人仓库中有但是自己没有东西,可以使用 git fetch `<shortname>`_
 
@@ -74,11 +74,11 @@
 
     _默认生成一个远程仓库 默认名字为origin_
 
-- git pull 
+- git pull
 
     _从最初克隆的服务器上抓取数据并且自动尝试合并到当前所在的分支_
 
-- git push origin(remote-name) master(branch-name) 
+- git push origin(remote-name) master(branch-name)
 
     _推送到远程仓库,只有当你有所克隆的服务器的写入权限,并且之前没有人推送过时,如果别人推送过后,你再推送,毫无异味你的推送会被reject,因为远程仓库已经变化,你必须先合并别人的工作后再提交自己的工作_
 
@@ -93,5 +93,3 @@
 - git remote rm [remote-name]
 
     _直接删除远程仓库_
-
-
