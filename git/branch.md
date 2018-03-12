@@ -47,5 +47,6 @@
 
 
 ## 远程分支
-- git clone origin 这个命令会创建本地得master分支和一个远程master分支引用，名字叫 origin/master 
+- git clone origin 这个命令会创建本地得master分支和一个远程master分支引用，名字叫 origin/master
 - git fetch origin 这个命令查找 "origin" 是哪一个服务器，从中抓取本地没有得数据，并且更新本地数据库。
+- 
