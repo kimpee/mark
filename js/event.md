@@ -37,7 +37,7 @@
 - which/keyCode
     - keypress 该属性声明了被敲击的键生成的unicode 字符吗(ascii码)
     - keydown/keyup 它指定了被敲击的键的虚拟键盘码. 虚拟键盘码可能和使用的键盘布局有关
-- altKey/ctrlKey/shiftKey 返回alt/ctrl/shift键是否被按下
+- altKey/ctrlKey/shiftKey (大写K) 返回alt/ctrl/shift键是否被按下
 
 - 光标位置信息
     - 全尺寸的事件,一般绑定给document对象
