@@ -133,7 +133,9 @@
   1. var mySymbol=Symbol();var a= {};a[mySymbol] = 'Nani';
   2. var a = {[mySymbol] : 'Nani'}
 
-- 用途二 ?
+- 用途二 做Map结构key值
+
+- 用途三 用于迭代器
 
 - 常用方法
   - Symbol.for(); 在全局中查找Symbol值,如果找不到就新建一个,如果找到了就返回这个Symbol值(只会查找通过此方法创建的Symbol)
@@ -168,10 +170,10 @@
   ```
 
 ## 生成器函数Generators 增强函数,可以暂停函数的执行
-
 - function 后接一个*
+- 执行函数不会执行里面的代码,next()以后才会调用
 - 函数内部可以使用yield 表达式,
-- next();
+- funname.next();
   - 执行next()后得到一个yield或return返回值组成的对象{value:xx,done:flase};
   - 对象中的done是否为ture,取决于函数是否结束;
   ```javascript

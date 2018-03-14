@@ -63,8 +63,12 @@
 
 ## 盒模型属性
 
-- offsetWidth/height();
-- offsetLeft/Top();
+- offsetWidth/height();// 盒模型的宽高 (border+padding+content)
+- offsetLeft/Top(); //距离定位元素的距离
+- clientLeft/Top//代表上边框/左边框的宽度
+- clientWidth/Height//盒模型的宽高 (padding+content)
+- scrollLeft/Top //当前元素滚动条滚动的距离
+- scrollWidth/Height  // 滚动条的高度(总高度),有兼容问题
 
 ## 获取计算后的css属性
 - getComputedStyle(ele[,pseudo]);
