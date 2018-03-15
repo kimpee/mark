@@ -1,10 +1,17 @@
-## 文档对象模型
+# 文档对象模型
 
-- 获取body
+## document属性（chrome平台下）
+- URL 本网页网址，可修改未知用途
+- HTMLCollection:scripts 获取所有script标签  
+- title 获取头， 可修改，即时生效
+- HTMLCollection:images
+- childNodes 包括文本节点
+
+## 获取body
   - document.body
   - document.head
 
-- 获取元素节点方法
+## 获取元素节点方法
   - document.getElementById(id);
   - document.getElementByTagName(tagname);
   - document.getElementByClassName(tagname);
@@ -14,7 +21,7 @@
 
 - 节点属性
   - nodeName
-  - nodeType
+  - nodeType  1 代表元素
   - nodeValue
 
 - 节点方法
@@ -45,7 +52,7 @@
   - 获取父级节点
     - ele.parentNode 得到ele元素的父节点   parentElement
   - 获取子节点
-    - ele.childNodes 得到ele元素的全部子节点列表(类数组)    用children可兼容ie
+    - ele.childNodes 得到ele元素的全部子节点列表(类数组可用forEach遍历)    用children可兼容ie
     - ele.firstChild;(包括文本节点) 获得ele元素的第一个子元素 firstElementChild
     - ele.lastChild;(包括文本节点) 获得ele元素的最后一个子元素 lastElementChild
   - 获取兄弟节点
