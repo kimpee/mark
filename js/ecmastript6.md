@@ -81,7 +81,7 @@
   'kimpee'.repeat(2); //kimpeekimpee
   ```
 
-## 箭头函数(ladam表达式)
+## 箭头函数(java中的ladam表达式)
 1. 没有参数的时候,函数用()加=>加{}表示
   ```javascript
     var fun=()=>{}
