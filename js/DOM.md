@@ -1,4 +1,8 @@
 # 文档对象模型
+- dom标准被分为3个部分
+  - 核心dom-针对任何结构化文档的标准模型
+  - XML DOM-针对XML文档的标准模型
+  - HTML DOM-针对HTML文档的标准模型
 
 ## document属性（chrome平台下）
 - URL 本网页网址，可修改未知用途
@@ -6,6 +10,7 @@
 - title 获取头， 可修改，即时生效
 - HTMLCollection:images
 - childNodes 包括文本节点
+
 
 ## 获取body
   - document.body
@@ -20,8 +25,8 @@
 ## 节点操作
 
 - 节点属性
-  - nodeName
-  - nodeType  1 代表元素
+  - nodeName 大写的标签名字
+  - nodeType  1 代表元素 3 代表文本 2 属性节点
   - nodeValue
 
 - 节点方法
@@ -56,8 +61,8 @@
     - ele.firstChild;(包括文本节点) 获得ele元素的第一个子元素 firstElementChild(ie8没有)
     - ele.lastChild;(包括文本节点) 获得ele元素的最后一个子元素 lastElementChild(ie8没有)
   - 获取兄弟节点
-    - ele.nextSibling 获得ele元素的下一个兄弟节点
-    - ele.previousSibling 得到ele元素的上一个兄弟节点
+    - ele.nextSibling() 获得ele元素的下一个兄弟节点(能获取文本节点) nextElementSibling()
+    - ele.previousSibling()能获取文本文本节点 得到ele元素的上一个兄弟节点 ele.previousElementSibling()
 
 ## 常用标准属性
 
