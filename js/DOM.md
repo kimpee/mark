@@ -73,14 +73,14 @@
 - removeAttribute(attr)//删除属性attr
 - ele.hasAttribute(attr)//判断是否存在属性attr
 
-## 盒模型属性
-
-- offsetWidth/height();// 盒模型的宽高 (border+padding+content)
-- offsetLeft/Top(); //距离定位元素的距离
-- clientLeft/Top//代表上边框/左边框的宽度
-- clientWidth/Height//盒模型的宽高 (padding+content)
-- scrollLeft/Top //当前元素滚动条滚动的距离
-- scrollWidth/Height  // 滚动条的高度(总高度),有兼容问题
+## 盒模型属性(位置)
+  - element.getBoundingClientRect();所有值都是相对视口的,若是窗口滚动了,此值会改变,只要left加上window.scrollX,scrollY得到的就是与滚动位置无关的常量,也就是该element在page上的位置
+  - element.offsetWidth/height();// 盒模型的宽高 (border+padding+content)
+  - element.offsetLeft/Top(); //距离定位元素的距离
+  - element.clientLeft/Top;//代表上边框/左边框的宽度
+  - element.clientWidth/Height//盒模型的宽高 (padding+content)
+  - scrollLeft/Top //当前元素滚动条滚动的距离
+  - scrollWidth/Height  // 滚动条的高度(总高度),有兼容问题
 
 ## 获取计算后的css属性
 - getComputedStyle(ele[,pseudo]);
