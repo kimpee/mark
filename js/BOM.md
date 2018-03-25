@@ -1,33 +1,39 @@
 # BOM
 
-# 概念
+## 概念
 
-* Browser Object Model 的缩写,提供与浏览器窗口进行交互的对象.他没有标准,所以各个浏览器的js要兼容.
+  * Browser Object Model 的缩写,提供与浏览器窗口进行交互的对象.他没有标准,所以各个浏览器的js要兼容.
 
-- window对象是bom的核心,所有对象都是在window里面引申出来的
+  - window对象是bom的核心,所有对象都是在window里面引申出来的
 
-- 定义在全局作用域下的变量,都会变成window对象的属性.
+  - 定义在全局作用域下的变量,都会变成window对象的属性.
 
-- 在函数内,如果不用var 声明对象,那么这个对象就会是全局对象也就是window的属性
+  - 在函数内,如果不用var 声明对象,那么这个对象就会是全局对象也就是window的属性
 
-- window可以在代码中省略
+  - window可以在代码中省略
 
 ## window的常用属性
+  - screenX,获得窗口距离视口的X距离;ie用window.sceenLeft
+  - screenY,获得窗口距离视口的距离;ie用window.sceenTop
+  - window.innerWeith;
+  - window.innerHeight;
 
-- window.innerWeith;window.innerHeight
+  - 滚动相关
+    - scrollX;
+    - scrollY;
+    - scrollTo();
+    - scrollBy();
+    - scrollbars.visible
 
-- 滚动相关
-  - scrollX;scrollY;
-  - scrollTo;scrollBy;
-
-- 系统对话框
-  - alert()
-  - confirm();有返回值 
-  - open(url,name[,option]) 打开一个页面 位置大小都可以定义 恶心
-    name不命名的话就会每次打开新窗口 命名的话第一次打开新窗口 第二次以后就在该窗口打开
-    option是字符串 width=....,height=....,left=....,top=.....'
-  - close() 关闭窗口
-  - print() 调出打印对话框
+  - 系统对话框
+    - alert()
+    - confirm();返回布尔值;
+    - prompt(msg,default);返回消息或null;
+    - open(url,name[,option]) 打开一个页面 位置大小都可以定义 恶心
+      name不命名的话就会每次打开新窗口 命名的话第一次打开新窗口 第二次以后就在该窗口打开
+      option是字符串 width=....,height=....,left=....,top=.....'
+    - close() 关闭窗口
+    - print() 调出打印对话框
 
 ## 属性对象
 - document 文档对象
@@ -47,7 +53,7 @@
   - search 设置或者返回从问号开始的url,查询部分
 
   `以上除了hash修改其他的属性都会刷新页面并且生成记录`
-  
+
   - reload() 刷新, 带参数true表示不使用缓存刷新页面
 
 - navigator
