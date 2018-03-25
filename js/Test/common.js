@@ -66,7 +66,7 @@ function verification(){
     return code;
 }
 
-/*
+/**
   兼容ie8的事件绑定
   @param {Element} ele  函数对象
   @param {String} type 事件类型
