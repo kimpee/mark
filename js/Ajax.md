@@ -32,13 +32,12 @@
   - 方法 getAllResponseHeaders()
   - 方法 getResponseHeaders()
 
-
 ## 跨域请求
   - 同源(同域)(同源策略)
     - 域名,协议,端口三者一致才能访问,js不允许跨域访问,默认同域操作,否则报错;
   - JSONP(跨域请求(get))
     - 原理:利用script标签可以跨域访问的特性,配合服务器实现,请求代码执行;
-      1. 
+      1.
   - cors(cross-origin resource sharing)跨域资源共享(ie10以下不支持)
     - 在服务器设置头()
       ```php
@@ -50,4 +49,38 @@
   - 服务器代理
     - 后端不存在跨域问题,所以可以利用后端间接获取其他网站的数据
 
-## Promise
+## Promise(es5)
+  - 定义
+    ```JavaScript
+    //参数是一个函数,该函数接受两个函数参数,一个名为resolve(成功过时候执行),一个名为reject(失败的时候调用),一般用于异步操作.
+    let promise = new Promise((resolve,reject)=>{
+
+    });
+    ```
+  - 三种状态
+    - Pending等待,挂起,即promise对象创建出来并没有执行操作;
+    - Resolved 操作成功
+    - Rejected 操作失败
+    - promise只能从Pending状态到Resolved状态或者从Pending到Rejected状态;不能反向和互连
+  - 静态方法
+    - Promise.resolve():
+    ```javascript
+      //返回一个resolved状态的Promise对象
+      let promise = Promise.resolve('foo');
+      // 相当于
+      let promise = new Promise((resolve)=>{
+        return resolve('foo');
+      });
+    ```
+  - Promise.reject();返回一个新的Promise,该对象的状态为rejected
+  - Promise.all([p1,p2,p3,p4...]);把多个promise对象封装成一个对象,当所有的promise对象准备好以后,才会执行他调用的方法;
+    ```javascript
+      let promise1 = new Promise((relolve,reject)=>{});
+      let promise2 = new Promise((relolve,reject)=>{});
+      let promise3 = new Promise((relolve,reject)=>{});
+      let promise4 = new Promise((relolve,reject)=>{});
+      Promise([promise1,promise2,promise3,promise4]).then();
+    ```
+  - Promise.race(arr);接受一个promise对象数组,只会执行之完成最快的对象
+  - promise.then([,resolve,reject]);连续调用时接受上参数是上一个then()的return 值;
+  - promise.catch(()=>{}); 错误处理函数.
