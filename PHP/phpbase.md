@@ -37,7 +37,9 @@
 
 ## 常量
   ```php
+    // BBBB 常量名字,羊羊常量的值
     define('BBBBBBBB','羊羊');
+
   ```
 ## Array
   - 类型
@@ -100,9 +102,14 @@
   - fwrite(resource,str,len);
 ## JSON操作
   - json_encode(var);
+  ```php
+  // 后面的常量表示不把中文进行unicode编码 
+  json_encode($res,JSON_UNESCAPED_UNICODE)
+  ```
   - json_decode(jsonstr);
+
 ## Ajax跨域
-  - header()
+  - header()(cros跨域)
     ```php
     header('Access-Conrtol-Allow-Origin:' . 'a.com');
     header('Access-Conrtol-Allow-Origin:' . '*');
@@ -113,3 +120,49 @@
   - file_get_contents(url/filename);
   - preg_match_all($regexp,$str,$res)
   - preg_match($regexp,$str,$res)
+
+## ajax
+  - 获取get请求数据
+    只要地址栏有参数,后端就能获取到参数
+  - 获取post请求数据
+    - 后端要获取前端数据,前端一定要添加请求头(在open()后设置);
+    - xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+
+
+## 对象
+  - 定义
+  ```php
+    class Person{
+      var $name = "kimpee"; // 一般不修改的值才会这样定义
+      function setName($name){
+        $this->name = $name; // $this 是一个指向对象实例的一个指针
+      }
+      function __construct ($firstName,$lastName){
+        $this->fisrstName = $firstName;
+        $this->lastName = $lastName;
+      }
+      //方法访问控制
+      /*
+        public 公开
+        private 私有 (不继承)
+        protected 保护
+        static 静态
+      */
+      public function eat(){
+
+      }
+    }
+    //继承
+    class Student extends Person{
+
+      //重写方法
+      function setNmae($name){
+        $this->name = $name;
+      }
+    }
+    // 实例化 没参数时候可以加括号
+    $p = new Person;
+    $p = new Person();
+    // 方法的调用
+    $p->setName("bb");
+  ```
