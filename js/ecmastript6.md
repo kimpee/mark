@@ -33,7 +33,7 @@
     ```
 
 ## 对象扩展,复制
-- Object.assign(obj1,obj2)(注意是Object的方法)
+- Object.assign(obj1,obj2,...)(注意是Object的方法)
   - 将obj1和obj2合并 若obj1为空对象,那么此方法可以合并对象
   - 只支持浅拷贝,深拷贝可以把对象变成JSON 字符串,在把字符串转成对象.
   - 忽略不可枚举属性
