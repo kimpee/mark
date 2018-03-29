@@ -84,3 +84,27 @@
   - Promise.race(arr);接受一个promise对象数组,只会执行之完成最快的对象
   - promise.then([,resolve,reject]);连续调用时接受上参数是上一个then()的return 值;
   - promise.catch(()=>{}); 错误处理函数.
+
+  - 封装
+  ```js
+  function get(url){
+    return new Promise((resolve,reject)=>{
+      var xhr = new XMLHttpRequest();
+      xhr.onload = function(){
+        if (xhr.status == 200) {
+          resolve();
+        }else {
+          reject(Error(xhr.statusText));
+        }
+
+      }
+      xhr.open('GET',url);
+      xhr.send();
+    });
+  }
+  function getJson(url){
+
+    return get(url).then(JSON.parse);
+  }
+  // 配合yeied使用更佳
+  ```
