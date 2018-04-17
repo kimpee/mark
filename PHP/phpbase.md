@@ -103,7 +103,7 @@
 ## JSON操作
   - json_encode(var);
   ```php
-  // 后面的常量表示不把中文进行unicode编码 
+  // 后面的常量表示不把中文进行unicode编码
   json_encode($res,JSON_UNESCAPED_UNICODE)
   ```
   - json_decode(jsonstr);
@@ -111,9 +111,13 @@
 ## Ajax跨域
   - header()(cros跨域)
     ```php
+    //允许某域名跨域
     header('Access-Conrtol-Allow-Origin:' . 'a.com');
+    //允许所有内容跨域
     header('Access-Conrtol-Allow-Origin:' . '*');
+    //运行post内容跨域
     header('Access-Control-Allow-Methods:POST');
+    //未知
     header('Access-Control-Allow-Headers:x-requested-with,content-type');
     ```
 ## 服务器代理跨域:(爬虫)获取某个网站所有的数据然后使用正则匹配提取数据
@@ -126,7 +130,7 @@
     只要地址栏有参数,后端就能获取到参数
   - 获取post请求数据
     - 后端要获取前端数据,前端一定要添加请求头(在open()后设置);
-    - xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    -  xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
 
 
 ## 对象
