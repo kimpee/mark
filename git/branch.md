@@ -1,9 +1,9 @@
 # 分支基础
 - git checkout
-  > 查看分支
-## 切换分支
+  - 查看分支
 
-- git checkout -b iss53
+## 切换分支
+  - git checkout -b iss53
   > 等同于同时执行:
     >> git branch iss53
     >> git checkout iss53
@@ -49,4 +49,4 @@
 ## 远程分支
 - git clone origin 这个命令会创建本地得master分支和一个远程master分支引用，名字叫 origin/master
 - git fetch origin 这个命令查找 "origin" 是哪一个服务器，从中抓取本地没有得数据，并且更新本地数据库。
-- 
+-

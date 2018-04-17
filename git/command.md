@@ -2,22 +2,22 @@
 
 ## 打印
 
-- git log -p 显示每次要提交的内容差异.
+  - git log -p 显示每次要提交的内容差异.
 
-- git log -p -2 加上-2 显示最近的两次提交
+  - git log -p -2 加上-2 显示最近的两次提交
 
-- git log --stat 查询简易信息
+  - git log --stat 查询简易信息
 
-    > git log --pretty==oneline 打印一行
+      - git log --pretty==oneline 打印一行
 
-    > git log --pretty==short 只显示commitID 和 commit信息
+      - git log --pretty==short 只显示commitID 和 commit信息
 
-    > git log --pretty==full 显示名字 email commitID commit内容
+      > git log --pretty==full 显示名字 email commitID commit内容
 
-    > git log --pretty==fuller 显示时间 包括authorDate和commitDate 名字 email commitID commit内容
+      > git log --pretty==fuller 显示时间 包括authorDate和commitDate 名字 email commitID commit内容
 
-- 最有意思的是 format
-    > git log --pretty=format:"%h - %an, %ar : %s"
+  - 最有意思的是 format
+      - git log --pretty=format:"%h - %an, %ar : %s"
 
 ### format常用选项
     - %H  --- 显示完整的commit 哈希值字串
@@ -38,19 +38,15 @@
     _作者和提交者的区别是,作者是修改的人,提交者是把修改提交到仓库的人_
     > oneline 或者 format与另一个log选项--graph结合使用时很有用,这个选项添加了一个ascii 字符串来形象地展示你的分支,合并历史:
 
-##　撤销操作
-
-- git commit --amend(修改)
-
-    _可以覆盖上一次commit 只添加更改 不添加提交次数_
-
-- git reset HEAD `<file>`...
-
-    _取消暂存,_
-
-- git checkout -- `<file>`
-
-    _取消文件的修改,危险操作,会撤销所有的修改_
+## 撤销操作
+  - git commit --amend(修改)
+    - _可以覆盖上一次commit 只添加更改 不添加提交次数_
+  - git reset `<file>`...
+    - _取消暂存_
+  - git reset commitID
+    - _版本回退_
+  - git checkout -- `<file>`
+    - _取消文件的修改,危险操作,会撤销所有的修改_
 
 ###　远程仓库
 
