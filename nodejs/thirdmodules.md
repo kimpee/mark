@@ -1,7 +1,6 @@
 # 一些常用的第三方模块应用
-
 ## zlib
-  - 亚索模块,详情查看modules的链式流部分
+  - 压缩模块,详情查看modules的链式流部分
 
 ## request 名词 (请求)
   ```js
@@ -271,7 +270,9 @@
 ## soket.io
   - 配合express来使用
   - socket 用`on`定义事件 io,on('login',(client)=>{}) ; 回调函数的参数是一个socket
-  - io.emit('event',_param); 此方法触发事件,参数是一个字符串
+
+  - io.emit('event',_param) 此方法触发事件,参数是一个字符串
+
     ```js
     var express = require('express');
     var app = express();
@@ -279,3 +280,28 @@
     var io = require('socket.io')(http);
     http.listen(88);
     ```
+    
+## jsonwebtoken(token)
+  - 客户端使用用户名和密码请求登录
+  - 服务端收到请求，验证登录是否成功
+  - 验证成功后，服务端会返回一个 Token 给客户端，反之，返回身份验证失败的信息
+  - 客户端收到 Token 后把 Token 用一种方式(cookie/localstorage/sessionstorage/其他)存储起来
+  - 客户端每次发起请求时都选哦将 Token 发给服务端
+  - 服务端收到请求后，验证Token的合法性，合法就返回客户端所需数据，反之，返回验证失败的信息
+
+  ```js
+    let token = require('jsonwebtoken');
+    //第一个参数是数据对象,第二个参数是用于加密,解密的字符串,第三个参数是一个option对象,有一个属性控制token有效时间
+    //加密
+    token.sgin({..},'123456',{
+      'expiresIn': 60*60*24//这里是24个小时以秒为单位
+    })
+    // 解密
+    jwt.verify(token, '123456', (error, result) => {
+        if(error){
+            response.send({status: false});
+        } else {
+            response.send({status: true, data: result});
+        }
+    })
+  ```

@@ -21,6 +21,48 @@
       }
     };
     ```
+
+## Get请求
+```js
+function ajax (url, data) {
+    let args = [];
+    for (let key in data) {
+        // 参数需要转义
+      args.push(`${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`);
+    }
+    let search = args.join("&");
+    // 判断当前url是否已有参数
+    url += ~url.indexOf("?") ? `&${search}` : `?${search}`;
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+    xhr.send();
+}
+```
+
+## post请求
+  原生请求默认的Content-Type:的类型是 text/plain;
+
+  jQuery 的默认Content-Type 是 application/x-www-form-urlencoded
+  它是一种最常用的一种请求编码方式，支持GET/POST等方法，特点是：所有的数据变成键值对的形式key1=value1&key2=value2的形式，并且特殊字符需要转义成utf-8编号，如空格会变成%20：
+
+  如果服务器要求是要使用 json 格式作为参数 那么就要设置Content-Type 为 application/json
+
+```js
+
+```
+
+## 上传文件
+```js
+let formData = new FormData();
+formData.append("id", 5); // 数字5会被立即转换成字符串 "5"
+formData.append("name", "#yin");
+// formData.append("file", input.files[0]);
+let xhr = new XMLHttpRequest();
+xhr.open("POST", "/add");
+xhr.send(formData);
+```
+
+
 ## XMLHttpRequest对象属性方法
   - 事件 onreadystatechange ,可用于监听请求过程
   - 事件 upload ,可用于监听上传过程
@@ -48,6 +90,9 @@
       ```
   - 服务器代理
     - 后端不存在跨域问题,所以可以利用后端间接获取其他网站的数据
+
+
+
 
 ## Promise(es5)
   - 注意 如果对象中有promise对象,该对象会变为该promise对象

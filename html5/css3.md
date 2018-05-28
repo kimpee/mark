@@ -96,16 +96,23 @@ font-fmaily:"lemon";
 
 ## 背景图片的大小
 - backgroud-size : x y;
-> 不等比例可能会变形
+
+  指定的高度和宽度是相对于父元素的
+
+ 不等比例可能会变形
 
 - backgroud-size:cover;(一般会发生图片丢失不过能覆盖容器)
 
 - backgroud-size:contain;(一般会留空白)
 
-- 默认,背景图片是从padding的左上角开始定位,为padding里面
+### 默认,背景图片是从padding的左上角开始定位,为padding里面
 
-> backgroud-origin:content-box;(在内容开始摆padding外面)
+- backgroud-origin:content-box;(在内容开始摆 padding外面)
 
-> backgroud-origin:border-box;(在边框开始摆border里面)
+- backgroud-origin:border-box;(在边框开始摆 border里面)
 
-- backgroud-clip:padding-box/content-box/border-box;(背景的裁剪决定最终的现实区域)
+- backgroud-clip:padding-box/content-box/border-box;(背景的裁剪决定最终的显示区域)
+
+
+## 渐变 
+  - linear-gradient(red,bule) 从红色渐变到蓝色

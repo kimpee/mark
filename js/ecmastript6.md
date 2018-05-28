@@ -1,4 +1,4 @@
-# ecmascript6 基本新特性
+## ecmascript6 基本新特性
 - 兼容性; ie7~11 基本不支持.
 ## 变量声明
   - let 创建块级作用域
@@ -179,15 +179,21 @@
   - funname.next();
     - 执行next()后得到一个yield或return返回值组成的对象{value:xx,done:flase};
     - 对象中的done是否为ture,取决于函数是否结束;
-    ```javascript
-      function* gen(){
+    
+    ```js
 
+    function* gen(){
       yield 10;
       console.log('yield1');
       yield 20;
       console.log('yield2');
       yield 40;
     }
-    let g=gen();//得到一个对象,里面有两个属性,一个是value 既是yield返回的值,第二个属性时done,若为ture,表示该函数执行完成.
-    g.next();
-  ```
+    /*得到一个对象,里面有两个属性,一个是value 既是yield返回的值,第二个属性时done,若为ture,表示该函数执行完成.
+    */
+    let g=gen();
+    g.next();```
+  
+
+## ...spread
+  - 可以讲字符串,数组拆解成一个用逗号分隔的序列.
