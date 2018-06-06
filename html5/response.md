@@ -10,14 +10,32 @@
 
 ## 像素并非像素
   在移动端中,css的像素并不等于设备的像素,设备有像素缩放比,导致css的像素,与实际的设备物理像素不一样.在初始化缩放为1的情况下(让一个设备像素等于一个css像素),一个css像素才等于一个设备像素.
+
+  - 设备独立像素
+    这个跟分辨率有关 , 属于 也就是屏幕宽度
+
+  - ppi/dpi 像素密集度
+    由 实际分辨率(硬件方面)的平方相加再 开方 除以 尺寸(单位英寸如 5.5) 也就是 根号(x^2 + y^2)/屏幕英寸
+
+  - 设备像素比 
+    设备像素(分辨率) / 设备独立宽度 
   
   各个移动端浏览器会有不用的缩放比,所以页面显示不尽相同,设置initial-scale=1.0 时,css像素等于一个设备物理像素,缩放的其实就是css像素.
 
 ## viewport
-  viewport是一个显示网页的视口,在手机浏览器中,这个视口一般比较大,不设置的话手机浏览器只能显示网页的一部分,用户需要通过平移才可以看得见全部的网页;
+  当不设置这个的时候 手机浏览器会把这个网页 整体缩小 然后在显示出来 ,如果你原本 50px 的盒子 在手机端 会变得很小 因为 手机(例如 iphone 5 ) 320 px的宽度 他显示的是 980个(layout viewport) css的 px 所以实际上 980/50 = 320/x 得到 
+  的是16 px; 设置了 viewport initial-scale=1 的时候16 px 是等于 没设置的时候的 50 px; 其实viewport 就是设置如何缩放 css像素的 initial-scale=1 这个就代表 1css像素 就等于 1 屏幕的像素  不设置的时候 2.几个css 像素 px 等于 1 个 屏幕px
+
+  layout viewport  一般比视口大 浏览器把 网页缩放到layout viewport 里面 显示 
+
+  visual viewport 严格等于浏览器宽度 用来显示layout viewport 可控制与layout viewport 的z轴距离 来达到缩放与放大的效果  
 
 ### 设置viewport
-  通常要设置width = 设备的宽度(device-width) 初始化缩放为1.0 ,通常这样网页会很小
+  通常要设置width = 设备的宽度(device-width) 初始化缩放为1.0
+  
+  不设置width时,缩放度越小, html的宽度越大 layout viewport 缩放度 越大 这样html 的宽度会很小
+
+  设置了width时 缩放度少于1 会放大html宽度 原本320px 的屏幕 需要640px 才可以铺满 若果width 大于1 将会放大 css px 单位 例如等于2 原本320px 的屏幕 160 的 css px 就可以铺满 
   ```html
   <meta name="viewport" content="width=device-width,initial-scale=1.0"></meta> 
   ```

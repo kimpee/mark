@@ -10,3 +10,7 @@
  - 最后看声明顺序。
     
     什么内部外部根本不影响，网上错漏百出的文章太多了。
+
+
+## 布局
+    给父元素加一个 空元素 然后设置text-align:center 空元素设置 dispaly:inline-block; vertical-align:center 就可以把另一个也同样设置的子元素 垂直水平居中

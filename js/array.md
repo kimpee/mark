@@ -8,17 +8,17 @@
 
 - splice(start,deleteAcount,item1)方法 可以添加删除,修改多个元素
 
-    > 删除参数: 只使用start参数,会删除数组的头尾元素;
+    - 删除参数: 只使用start参数,会删除数组的头尾元素;
 
-    > 添加参数: startindex deleteacount(删除0个元素)  value1,value2,value3,.... 后面就是添加的选项
+    - 添加参数: startindex deleteacount(删除0个元素)  value1,value2,value3,.... 后面就是添加的选项
 
-    > 添加参数: startindex deleteacount(删除0个元素)  value1,value2,value3,.... 如果start的值比数据的元素个数大,就添加元素无论deleteaccount的多少
+    - 添加参数: startindex deleteacount(删除0个元素)  value1,value2,value3,.... 如果start的值比数据的元素个数大,就添加元素无论deleteaccount的多少
 
-    > 删除参数: startindex value   value指删除的个数 删除的个数比start后面的元素多 就会把start在内的元素都删除
+    - 删除参数: startindex value   value指删除的个数 删除的个数比start后面的元素多 就会把start在内的元素都删除
 
-    > 修改参数: 先删除后添加 startindex value(删除个数) value(添加个数)
+    - 修改参数: 先删除后添加 startindex value(删除个数) value(添加个数)
 
-    > 返回值,是所有被删除的数据组成的一个新数组
+    - 返回值,是所有被删除的数据组成的一个新数组
 
 ### 索引值方法
 
@@ -56,5 +56,5 @@
 - slice(num[,num]);
   ```js
     arr.slice(3); //从下标3(包含3)开始截取到最后
-    arr.slice(2,4);// 截取下标2(包含2)到4(不包含4)的元素 也就是2个 
+    arr.slice(2,4);// 截取下标2(包含2)到4(不包含4)的元素 也就是2个
   ```

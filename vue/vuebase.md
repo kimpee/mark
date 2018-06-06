@@ -9,8 +9,9 @@
       <label>Email</label>
       <input placeholder="Enter your email address" key="email-input>
     </template>
-    //label并不会重新渲染,因为他并没有key值
+    <!-- label并不会重新渲染,因为他并没有key值 -->
     ```
+
   - 模版
     vue允许采用模版来声明式的讲数据渲染进dom元素,也叫文本插值
 
@@ -20,6 +21,7 @@
       <h1>{{title}}</h1>
     </div>
     ```
+
     ```js
       let vue = new Vue({
         el:"#app",
@@ -28,6 +30,7 @@
         }
       });
     ```
+------------------------
 
 ## 指令
   - `v-bind`
@@ -54,6 +57,7 @@
       <h1 v-if="show">{{title}}</h1>
     </div>
     ```
+
     ```js
       new Vue({
         el:"#app",

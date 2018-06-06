@@ -24,7 +24,7 @@
 
 * search() 支持正则表达式
 
-* replace(str|regExg);(支持正则表达式) 
+* replace(str|regExg,str);(支持正则表达式) 
   查找并替换,这里只能替换一次,更多需求请使用正则表达式
 
 ## 分割
