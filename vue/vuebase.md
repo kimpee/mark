@@ -1,5 +1,6 @@
 # vue基础笔记
-  - 用key来管理复用的元素
+
+- 用key来管理复用的元素
     ```html
     <template v-if="loginType === 'username'">
       <label>Username</label>
@@ -33,7 +34,8 @@
 ------------------------
 
 ## 指令
-  - `v-bind`
+
+- `v-bind`
     类似v-bind 被称为指令,指令带有v-前缀,指令只作用于宿主元素;
   - `v-bind:href`:后面的叫参数.
     ```html
@@ -139,10 +141,10 @@
 
 ## 组件
 
-  - `template`属性的值,可以是css3选择器
-  - 没有`props`属性的组件很单调,数据并不会发生动态改变;
-  - 有`props`属性时候,在template属性里面的html表达式内可以使用`props`内的对象
-  - 每一个组件都要加个`key`值,且`key`值不能在`template`内使用
+- `template`属性的值,可以是css3选择器
+- 没有`props`属性的组件很单调,数据并不会发生动态改变;
+- 有`props`属性时候,在template属性里面的html表达式内可以使用`props`内的对象
+- 每一个组件都要加个`key`值,且`key`值不能在`template`内使用
 
   ```html
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -157,7 +159,9 @@
       </test>
     </div>
   </div>
+
   ```
+
   ```js
     Vue.component("test",{
       props:['demo','demos'],
@@ -176,14 +180,16 @@
   ```
 
 ## 数组更新检测(下面方法调用时,dom对象也会刷新)
-   - push()
-   - pop()
-   - shift()
-   - unshift()
-   - splice()
-   - sort()
-   - reverse()
-   - 注意事项
+
+- push()
+- pop()
+- shift()
+- unshift()
+- splice()
+- sort()
+- reverse()
+
+- 注意事项
     ```javascript
     let vm = new Vue({
       data:{
@@ -202,8 +208,10 @@
     ```
 
 ## 对象(由于javascript的限制,对象的属性的添加和删除检测不到)
-  - 可以使用vm.$set()  Vue.set() 解决
-  - 赋予多个新属性
+
+- 可以使用vm.$set()  Vue.set() 解决
+- 赋予多个新属性
+
   ```js
   vm.userProfile = Object.assign({}, vm.userProfile, {
     age: 27,

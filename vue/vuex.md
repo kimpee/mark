@@ -1,7 +1,7 @@
 # vuex
 
-## 
-  - vuex.store
+## vuex.store
+
    ```js
    //store.js
    import Vue from 'vue';
@@ -17,7 +17,7 @@
         console.log('恭喜恭喜恭喜你呀');
       }
     }
-  }); 
+  });
 
   export default store;
 
@@ -36,10 +36,11 @@
     Vuex 允许我们在 store 中定义“getter”（可以认为是 store 的计算属性）。就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。
 
 ## mutations
+
   改变state 的 唯一途径 里面的方法决定state 如何改变 类似 redux 的 reducer  并且 所有操作均为同步操作
 
+## action
 
-## action 
   可通过执行 mutations 里的方法去改变state 并且 多事异步操作,在回调函数里调用 mutations 里的方法
 
 ## modules:{}
@@ -69,4 +70,4 @@
 
   store.state.a // -> moduleA 的状态
   store.state.b // -> moduleB 的状态
-  ``` 
+  ```
