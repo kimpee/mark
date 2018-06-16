@@ -46,13 +46,13 @@
 
 ## 相应路由参数变化(动态路由)
 
-- 当你传不同的参数进入路由的时候,其实触发的是同一个组件,原来的组件实例会被复用,并不会重新渲染(但是数据会更新),所以组件的生命周期钩子函数并不会触发.
+- 当你传不同的参数进入路由的时候,其实触发的是同一个组件,原来的组件实例会被复用,并不会重新渲染(但是数据会更新),所以组件的某些生命周期钩子函数并不会触发.
 - 若想在参数变化的时候做一些骚操作,可以在watch属性上定义函数
 
   ```js
   new Vue({
     watch:{
-      $route:function(){
+      '$route':function(){
         console.log('参数改变了哟,帅哥');
       }
     },
@@ -166,19 +166,48 @@ location是一个字符串路径,或者是一个描述路径的对象
 
 ## 注意
 
-  同一个路径可以匹配多个路由,路由具有优先级,谁先定义,谁最高
+### 同一个路径可以匹配多个路由,路由具有优先级,谁先定义,谁最高
 
 - `router-view`一般要通过`router-link`或者编程模导航才能触发,不能单独使用
 
-- 路由懒加载
+### 路由懒加载
 
-  ```javascript
+```js
 
-    // Vue路由文档的写法:
-    const app = () => import('./app.vue') // 引入组件
-    const router = new VueRouter({
-      routes: [
-        { path: '/app', component: app }
-      ]
-    })
-    ```
+Vue路由文档的写法:
+  const app = () => import('./app.vue')
+  引入组件
+  const router = new VueRouter({
+    routes: [
+      { path: '/app', component: app }
+    ]
+  })
+
+```
+
+### 路由参数变化,页面数据不刷新
+
+  ajax 请求放在 created 函数里面,路由参数变化的时候变化的时候并不会在次执行 created,他会复用组件;
+
+- 解决方法(watch 监听路由)
+
+```js
+
+  watch: {
+  '$route' (to, from) { //监听路由是否变化
+    if(this.$route.params.articleId){//是否有文章id
+      //获取文章数据
+    }
+  }
+}
+
+```
+
+### 路由离开的守卫方法(beforeRouteLeave)
+
+  在这里可以做一些数据的保存.例如表单,或者草稿.
+
+### 路由激活
+
+  路由激活了以后,会自动的激活一个类名(.router-link-active),要做高亮请在那个类名里面使用.
+
