@@ -21,6 +21,7 @@
             "timeout":600
 }
 ```
+
 - 然后用下面命令开启sslocal -c /var/snap/ssocks/current/config.json
 
 - 最后开启系统的代理为自动代理 设置socks 的主机为127.0.0.1 端口为1080；
