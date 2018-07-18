@@ -2,6 +2,10 @@
 
 ## 细节
 
+- 事件名
+
+  尽量使用 xxx-xxx 的命名 因为html 对大小写不敏感
+
 - 特殊html机构,例如,ul>li,dl>dt+dd,select>option 使用组件的时候这样使用
     ```html
       <ul id="app">
