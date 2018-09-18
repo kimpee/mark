@@ -39,14 +39,15 @@
     > oneline 或者 format与另一个log选项--graph结合使用时很有用,这个选项添加了一个ascii 字符串来形象地展示你的分支,合并历史:
 
 ## 撤销操作
-  - git commit --amend(修改)
-    - _可以覆盖上一次commit 只添加更改 不添加提交次数_
-  - git reset `<file>`...
-    - _取消暂存_
-  - git reset commitID
-    - _版本回退_
-  - git checkout -- `<file>`
-    - _取消文件的修改,危险操作,会撤销所有的修改_
+
+- git commit --amend(修改)
+- _可以覆盖上一次commit 只添加更改 不添加提交次数_
+- git reset `<file>`...
+- _取消暂存_
+- git reset commitID
+- _版本回退_
+- git checkout -- `<file>`
+- _取消文件的修改,危险操作,会撤销所有的修改_
 
 ###　远程仓库
 
