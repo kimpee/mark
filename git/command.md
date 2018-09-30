@@ -51,6 +51,10 @@
 
 ###　远程仓库
 
+git pull origin master --allow-unrelated-histories
+
+此命令在仓库是在本地创建的然后在添加远程仓库的时候使用
+
 - git remote
 
     _查看远程仓库,名字_
