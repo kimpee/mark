@@ -4,12 +4,12 @@
 
 1. 创建一个异步请求对象
 
-  let xhr = new XMLHttpRequest();
+  `let xhr = new XMLHttpRequest();`
 2. 配置请求参数 (第三个参数为是否异步.默认为true )
 
-  xhr.open('get',"http://localhost/phpbase/goodlist.json",true); 第一个参数是类型,第二个参数是url,第三个参数是是否异步
+  `xhr.open('get', 'http://localhost/phpbase/goodlist.json', true);` 第一个参数是类型,第二个参数是url,第三个参数是是否异步
 3. 发起请求
-  xhr.send(); 有可选参数,用于Post请求,发送给服务器的字符串数据
+  `xhr.send(); 有可选参数,用于Post请求,发送给服务器的字符串数据
 4. 响应　(此事件一般在新建请求对象之后马上绑定)
   readyState == 0|1|2|3|4; 0表示还没open(),1已经调用open却没调用send,2表示已经调用send,但是还没受到数据,3已经收到部分的数据,4已经受到完整数据
 
@@ -51,18 +51,6 @@ function ajax (url, data) {
 
   如果服务器要求是要使用 json 格式作为参数 那么就要设置Content-Type 为 application/json
 
-## 上传文件
-
-```js
-let formData = new FormData();
-formData.append("id", 5); // 数字5会被立即转换成字符串 "5"
-formData.append("name", "#yin");
-// formData.append("file", input.files[0]);
-let xhr = new XMLHttpRequest();
-xhr.open("POST", "/add");
-xhr.send(formData);
-```
-
 ## XMLHttpRequest对象属性方法
 
 - 事件 onreadystatechange ,可用于监听请求过程
@@ -74,6 +62,59 @@ xhr.send(formData);
   - 设置POST 请求的提交数据格式
 - 方法 getAllResponseHeaders()
 - 方法 getResponseHeaders()
+
+### 相应属性
+
+.responseXML
+
+### 进度检测
+
+- req.addEventListener("progress", updateProgress, false);
+- req.addEventListener("load", transferComplete, false);
+- req.addEventListener("error", transferFailed, false);
+- req.addEventListener("abort", transferCanceled, false);
+
+**注意** 事件监听要在open之前注册
+
+progress 事件被指定由 updateProgress() 函数处理，并接收到传输的总字节数和已经传输的字节数，它们分别在事件对象的 total 和 loaded 属性里。但是如果 lengthComputable 属性的值是 false，那么意味着总字节数是未知并且 total 的值为零。
+
+以上是下载的时间,以下是上传的时间
+
+- req.upload.addEventListener("progress", updateProgress);
+- req.upload.addEventListener("load", transferComplete);
+- req.upload.addEventListener("error", transferFailed);
+- req.upload.addEventListener("abort", transferCanceled);
+
+**注意** 注意 progress 在使用file: 协议的时候是无效的
+
+以下是 3 种加载都可以监听的事件(abort、load、error)
+
+`req.addEventListener("loadend", loadEnd, false);`
+
+## 提交表单,和上传文件
+
+- 使用 Ajax
+- 使用FormData API
+
+这是第二种,快捷简单.
+
+```js
+let formData = new FormData();
+formData.append("id", 5); // 数字5会被立即转换成字符串 "5"
+formData.append("name", "#yin");
+// formData.append("file", input.files[0]);
+let xhr = new XMLHttpRequest();
+xhr.open("POST", "/add", true); 
+xhr.send(formData);
+
+**using pure Ajax upload**
+
+
+```
+
+## 长连接(WebSocket, EventSource)
+
+`var evtSource = new EventSource("ssedemo.php");` 从服务器接受事件.
 
 ## 跨域请求
 
