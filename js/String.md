@@ -51,6 +51,24 @@
 * str[index] 通过索引值获取字符
 * trim() 删除字符串两边的空格
 
+## es6
+
+* str.repeat('foo')
+
+重复一个字符串
+
+### 检验方法
+
+* startsWith(string, start = 0)
+
+* endsWith(string, start = 0)
+
+* includes(string, start = 0)
+
+检验子串是否存在, 如果传入一个空字符串, 他要么在头, 要么在尾巴
+
+以上方法默认都不接受正则表达式, 但是如果是用元编程来甘搞, 这是可以被轻松跳过的!
+
 ## ascii码
 
 * str.charCodeAt(3); //字符串的方法

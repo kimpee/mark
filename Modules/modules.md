@@ -66,12 +66,15 @@ require.relative = function (parent) {
 
 声明一个模块
 
-require.modules = {}
+require.register()
 
 第一次注册后require.modules 变成这样:
+
+```js
 require.modules = {
   '/header': function(){}
 }
+```
 
 var mod = require.modules['/header'] ==> function(){}
 
